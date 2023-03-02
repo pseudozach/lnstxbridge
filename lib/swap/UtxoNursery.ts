@@ -125,7 +125,7 @@ class UtxoNursery extends EventEmitter {
       }
 
       this.logger.verbose(`Found ${confirmed ? '' : 'un'}confirmed lockup transaction for Swap ${swap.id}: ${transaction.getId()}`);
-      // console.log('un.122 atomic swap found ', swap, transaction);
+      console.log('un.122 atomic swap found ', swap, transaction);
 
       const swapOutput = detectSwap(getHexBuffer(swap.asRedeemScript!), transaction)!;
       console.log('un.121 swapOutput!!!! should NOT be undefined! ', swapOutput);
@@ -259,10 +259,11 @@ class UtxoNursery extends EventEmitter {
         continue;
       }
 
-      this.logger.verbose(`Found ${confirmed ? '' : 'un'}confirmed lockup transaction for Swap ${swap.id}: ${transaction.getId()}`);
+      this.logger.verbose(`un.262 Found ${confirmed ? '' : 'un'}confirmed lockup transaction for Swap ${swap.id}: ${transaction.getId()}`);
 
       const swapOutput = detectSwap(getHexBuffer(swap.redeemScript!), transaction)!;
 
+      console.log('un.266 swap vs swapOutput ', swap, swapOutput);
       swap = await this.swapRepository.setLockupTransaction(
         swap,
         transaction.getId(),
