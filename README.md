@@ -9,7 +9,7 @@
 ## install
 * clone the repo, install requirements and compile  
 `git clone https://github.com/pseudozach/lnstxbridge.git`  
-`cd lnstxbridge && npm i && npm run compile`  
+`cd lnstxbridge && npm i && npm run compile && npm rebuild`  
 * start btc & lnd  
 `npm run docker:regtest`
 * start stacks  
@@ -20,6 +20,7 @@
 * start the app  
 `npm run start`
 
+## integrate
 * clone [lnstxbridge-client](https://github.com/pseudozach/lnstxbridge-client.git) repo and start it with `aggregatorUrl` parameter set to this bridge IP:port.
 
 ## use 
